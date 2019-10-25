@@ -1,0 +1,14 @@
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\bin\Debug\netcoreapp2.2\RecordConsoleApp.deps.json
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\bin\Debug\netcoreapp2.2\RecordConsoleApp.runtimeconfig.json
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\bin\Debug\netcoreapp2.2\RecordConsoleApp.runtimeconfig.dev.json
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\bin\Debug\netcoreapp2.2\RecordConsoleApp.dll
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\bin\Debug\netcoreapp2.2\RecordConsoleApp.pdb
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\obj\Debug\netcoreapp2.2\RecordConsoleApp.csprojAssemblyReference.cache
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\obj\Debug\netcoreapp2.2\RecordConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\obj\Debug\netcoreapp2.2\RecordConsoleApp.AssemblyInfoInputs.cache
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\obj\Debug\netcoreapp2.2\RecordConsoleApp.AssemblyInfo.cs
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\obj\Debug\netcoreapp2.2\RecordConsoleApp.dll
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\obj\Debug\netcoreapp2.2\RecordConsoleApp.pdb
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\bin\Debug\netcoreapp2.2\Record.Console.App.Contracts.dll
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\bin\Debug\netcoreapp2.2\Record.Console.App.Contracts.pdb
+C:\Users\jjackson\source\repos\Presentation\RecordConsoleApp\obj\Debug\netcoreapp2.2\RecordConsoleApp.csproj.CopyComplete

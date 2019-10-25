@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+
+
+namespace Record.Console.App.Contracts.Extensions
+{
+    public static class StringExtensions
+    {
+        public static List<string> AsCollectionFromFile(this string text)
+        {
+            var recordCollection = text.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            
+            // remove header string 
+            recordCollection.RemoveAt(0);
+
+            return recordCollection;
+        }
+        public static bool IsProperFormat(this string text, char seperator, int fieldCount)
+        {
+            // edge case for almost properly formated records
+            if (text.StartsWith(",") || text.StartsWith("\t") || text.EndsWith(",") || text.EndsWith("\t")) return false;
+
+            // seperators should always be between fields, so there should always be one less seperator than total fields
+            var correctSeparatorCount = text.Count(s => s == seperator) == fieldCount - 1;
+            var correctFieldCount = text.Split(seperator).Length == fieldCount;
+
+            // if the number of fields is not equal to the number of fields specifies,
+            // or if the total number of seperators is now equal to the amount expected
+            // return false else return true.
+
+            return (!correctSeparatorCount || !correctFieldCount) ? false : true;
+        }
+
+        public static bool Is(this string text, string comparer)
+        {
+            // a little utility to make string comparision easier
+            return text.Equals(comparer, StringComparison.InvariantCultureIgnoreCase);
+        }
+    }
+}

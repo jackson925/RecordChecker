@@ -1,0 +1,9 @@
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\obj\Debug\netstandard2.0\Record.Console.App.Contracts.csprojAssemblyReference.cache
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\obj\Debug\netstandard2.0\Record.Console.App.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\obj\Debug\netstandard2.0\Record.Console.App.Contracts.AssemblyInfoInputs.cache
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\obj\Debug\netstandard2.0\Record.Console.App.Contracts.AssemblyInfo.cs
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\bin\Debug\netstandard2.0\Record.Console.App.Contracts.deps.json
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\bin\Debug\netstandard2.0\Record.Console.App.Contracts.dll
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\bin\Debug\netstandard2.0\Record.Console.App.Contracts.pdb
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\obj\Debug\netstandard2.0\Record.Console.App.Contracts.dll
+C:\Users\jjackson\source\repos\Presentation\ClassLibrary1\obj\Debug\netstandard2.0\Record.Console.App.Contracts.pdb
