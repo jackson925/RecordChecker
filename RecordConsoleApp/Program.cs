@@ -11,45 +11,36 @@ namespace RecordConsoleApp
     {
         static void Main(string[] args)
         {
-            var manager = new RecordManager();
+            var recordManager = new RecordManager();
 
-           
+            (var recordKey, var correctKey, var incorrectKey) = recordManager.GetRecordKeys();
+
             // get and set the path for the records file 
 
-            (var key, var path) = GetPathFor("Records");
+            (var key, var path) = GetPathFor(recordKey);
 
-            manager.SetPath(key, path);
+            recordManager.SetPath(key, path);
 
-            // get and set the path for where to store the incorrect records
+            recordManager.SetFormat(GetFormat());
 
-            (key, path) = GetPathFor("Incorrect Records", false);
-
-            manager.SetPath(key, path);
-
-            // get and set the path for where to store the correct records 
-
-            (key, path) = GetPathFor("Correct Records", false);
-
-            manager.SetPath(key, path);
-
-            manager.SetFormat(GetFormat());
-
-            manager.SetFieldsPerRecord(GetFieldsPerRecord());
-
+            recordManager.SetFieldsPerRecord(GetFieldsPerRecord());
 
             // read the records file and turn it into a collection of strings
 
-            var recordCollection = File.ReadAllText(manager.GetTextFromPath("Records")).AsCollectionFromFile();
+            var recordCollection = File.ReadAllText(recordManager.GetTextFromPath(recordKey)).AsCollectionFromFile();
 
             // validate record format and write to target output files
 
-            manager.ValidateAndWriteRecords(recordCollection);
+            recordManager.ValidateAndWriteRecords(recordCollection);
 
             Console.BackgroundColor = ConsoleColor.Green;
             Console.WriteLine("Finished writing records to output destinations");
+            Console.WriteLine($"Incorrect Records Location: {recordManager.PathDictionary[incorrectKey]}");
+            Console.WriteLine($"Correct Records Location: {recordManager.PathDictionary[correctKey]}");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ReadLine();
         }
+
 
         static (string key, string path) GetPathFor(string key, bool checkIfExists = true)
         {

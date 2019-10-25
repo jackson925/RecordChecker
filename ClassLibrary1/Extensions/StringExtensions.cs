@@ -22,20 +22,16 @@ namespace Record.Console.App.Contracts.Extensions
             // edge case for almost properly formated records
             if (text.StartsWith(",") || text.StartsWith("\t") || text.EndsWith(",") || text.EndsWith("\t")) return false;
 
-            // seperators should always be between fields, so there should always be one less seperator than total fields
+            // seperators should be between fields, so there should always be one less seperator than fields
             var correctSeparatorCount = text.Count(s => s == seperator) == fieldCount - 1;
             var correctFieldCount = text.Split(seperator).Length == fieldCount;
 
-            // if the number of fields is not equal to the number of fields specifies,
-            // or if the total number of seperators is now equal to the amount expected
-            // return false else return true.
 
             return (!correctSeparatorCount || !correctFieldCount) ? false : true;
         }
 
         public static bool Is(this string text, string comparer)
         {
-            // a little utility to make string comparision easier
             return text.Equals(comparer, StringComparison.InvariantCultureIgnoreCase);
         }
     }

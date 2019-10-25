@@ -14,9 +14,14 @@ namespace Record.Console.App.Contracts
         public static List<string> FormatOptions = new List<string> { "CSV", "TSV" };
         public char FormatSeperator { get; set; }
         public int FieldsPerRecords { get; set; }
-        public string RecordKey => "Records";
-        public string CorrectRecordsKey => "Correct Records";
-        public string IncorrectRecordsKey => "Incorrect Records";
+        public static string RecordKey => "Records";
+        public static string CorrectRecordsKey => "Correct Records";
+        public static string IncorrectRecordsKey => "Incorrect Records";
+
+        public (string recordKey, string correctKey, string incorrectKey) GetRecordKeys()
+        {
+            return (RecordKey, CorrectRecordsKey, IncorrectRecordsKey);
+        }
 
         public bool SetFormat(string format)
         {
@@ -42,6 +47,11 @@ namespace Record.Console.App.Contracts
                 return false;
             }
 
+            if (key.Is(RecordKey))
+            {
+                CreateDefaultPaths(path);
+            }
+
             PathDictionary.Add(key, path);
 
             return true;
@@ -57,16 +67,15 @@ namespace Record.Console.App.Contracts
             return PathDictionary[key];
         }
         
-        private void WriteRecords(List<Record> records, string key)
+
+        public string GetPath(string key)
         {
-            if (!records.Any())
+            if (!PathDictionary.ContainsKey(key))
             {
-                return;
+                return string.Empty;
             }
 
-            File.WriteAllText(PathDictionary[key], records.AsString());
-
-            return;
+            return PathDictionary[key];
         }
 
         public void ValidateAndWriteRecords(List<string> records)
@@ -82,6 +91,26 @@ namespace Record.Console.App.Contracts
             WriteRecords(validRecords, CorrectRecordsKey);
 
             return;
+        }
+        private void WriteRecords(List<Record> records, string key)
+        {
+            if (!records.Any())
+            {
+                return;
+            }
+
+            File.WriteAllText(PathDictionary[key], records.AsString());
+
+            return;
+        }
+
+        private void CreateDefaultPaths(string recordPath)
+        {
+            var recordPathWithoutExtension = recordPath.Substring(0, recordPath.Length - 4);
+
+            SetPath(CorrectRecordsKey, $"{recordPathWithoutExtension}-correct.txt");
+
+            SetPath(IncorrectRecordsKey, $"{recordPathWithoutExtension}-incorrect.txt");
         }
 
     }
